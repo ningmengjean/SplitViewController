@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B7F9FD5F-CEB2-4D84-8C96-9F0B9B03B418"
+            uuid = "63E3423A-7CC9-43B7-8051-9AD1D7516293"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SplitViewController/LeftMenuListViewController.swift"
+            filePath = "SplitViewController/SplitViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "dismissView(_:)"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "dismissLeftMenu(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

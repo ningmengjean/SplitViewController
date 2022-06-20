@@ -7,23 +7,22 @@
 
 import UIKit
 
-class SplitViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class SplitViewController: UISplitViewController, LeftMenuListViewControllerDelegate {
+    func dismissLeftMenu(sender: UIButton) {
+        print("lalala")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let leftMenuListViewController = storyboard.instantiateViewController(withIdentifier: "LeftMenuListViewController") as! LeftMenuListViewController
+        leftMenuListViewController.delegate = self
     }
-    */
-
 }
+
+//extension UISplitViewController {
+//    func toggleMasterView() {
+//        let barButtonItem = self.displayModeButtonItem
+//        UIApplication.shared.sendAction(barButtonItem.action!, to: barButtonItem.target, from: nil, for: nil)
+//    }
+//}

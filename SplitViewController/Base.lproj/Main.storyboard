@@ -103,7 +103,7 @@
         <!--Split View Controller-->
         <scene sceneID="E7c-uc-0vu">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" id="dKc-4b-yeq" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="SplitViewController" allowDoubleColumnStyle="YES" id="dKc-4b-yeq" customClass="SplitViewController" customModule="SplitViewController" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="cbH-FM-Tgf" kind="relationship" relationship="masterViewController" id="Mvj-RE-9kP"/>
                         <segue destination="JYK-hy-mLY" kind="relationship" relationship="detailViewController" id="mkc-3Z-BaG"/>

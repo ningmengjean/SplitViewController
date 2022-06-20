@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LeftMenuListViewControllerDelegate: AnyObject {
+    func dismissLeftMenu(sender: UIButton)
+}
+
 class LeftMenuListViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -15,21 +19,10 @@ class LeftMenuListViewController: UIViewController {
         self.view.backgroundColor = .clear
     }
     
-    @IBAction func dismissView(_ sender: UIButton) {
-        let navigationController = splitViewController?.viewControllers.last as? UINavigationController
-        let tabBarViewController = navigationController?.topViewController as? UITabBarController
-        let mailListViewController = tabBarViewController?.children[0] as? MailListViewController
-        splitViewController?.showDetailViewController(mailListViewController!, sender: nil)
-    }
+    weak var delegate: LeftMenuListViewControllerDelegate?
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func dismissView(_ sender: UIButton) {
+        delegate?.dismissLeftMenu(sender: sender)
     }
-    */
 
 }
