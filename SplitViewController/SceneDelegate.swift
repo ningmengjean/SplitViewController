@@ -15,8 +15,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard
           let splitViewController = window?.rootViewController as? UISplitViewController,
-          //let leftNavController = splitViewController.viewControllers.first as? UINavigationController,
-          //let mailListViewController = leftNavController.viewControllers.first as? MailListViewController,
           let tabBarViewController = (splitViewController.viewControllers.last as? UINavigationController)?.topViewController as? UITabBarController,
           let mailListViewController = tabBarViewController.children[0] as? MailListViewController
             

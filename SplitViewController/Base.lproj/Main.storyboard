@@ -2,28 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dKc-4b-yeq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="5lm-fc-wHx">
-            <objects>
-                <navigationController id="oU7-ve-I64" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cOI-Ky-gOO">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cbH-FM-Tgf" kind="relationship" relationship="rootViewController" id="WTX-qW-MQe"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ZA-bS-Cqb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="395" y="-346"/>
-        </scene>
         <!--Left Menu List View Controller-->
         <scene sceneID="fYd-ko-87z">
             <objects>
@@ -36,13 +21,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="339" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vq-bK-y5L">
+                                <rect key="frame" x="334" y="0.0" width="80" height="862"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="MY1-Hr-ynJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="cbH-FM-Tgf" eventType="touchUpInside" id="9BV-2w-zXw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Tz-eH-Lbg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="3vq-bK-y5L" firstAttribute="top" secondItem="vrK-Gv-Aco" secondAttribute="top" id="8hb-OX-EbB"/>
+                            <constraint firstItem="3vq-bK-y5L" firstAttribute="trailing" secondItem="1Tz-eH-Lbg" secondAttribute="trailing" id="LCG-i5-Yb3"/>
                             <constraint firstItem="Qng-UD-Y5b" firstAttribute="top" secondItem="vrK-Gv-Aco" secondAttribute="top" id="MEc-vl-mPq"/>
                             <constraint firstAttribute="bottom" secondItem="Qng-UD-Y5b" secondAttribute="bottom" id="RB4-gP-kDP"/>
                             <constraint firstItem="1Tz-eH-Lbg" firstAttribute="trailing" secondItem="Qng-UD-Y5b" secondAttribute="trailing" constant="75" id="c5C-FL-vk3"/>
+                            <constraint firstItem="1Tz-eH-Lbg" firstAttribute="bottom" secondItem="3vq-bK-y5L" secondAttribute="bottom" id="kwn-ic-4So"/>
                             <constraint firstItem="Qng-UD-Y5b" firstAttribute="leading" secondItem="1Tz-eH-Lbg" secondAttribute="leading" id="yyW-6d-zf7"/>
                         </constraints>
                     </view>
@@ -50,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Tw-Yb-VHD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1169.5652173913045" y="-346.20535714285711"/>
+            <point key="canvasLocation" x="393" y="-345"/>
         </scene>
         <!--Item-->
         <scene sceneID="hjL-dy-6a0">
@@ -106,8 +105,8 @@
             <objects>
                 <splitViewController allowDoubleColumnStyle="YES" id="dKc-4b-yeq" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="oU7-ve-I64" kind="relationship" relationship="masterViewController" id="iJW-OC-eq4"/>
-                        <segue destination="JYK-hy-mLY" kind="relationship" relationship="detailViewController" id="Vgc-44-Gy9"/>
+                        <segue destination="cbH-FM-Tgf" kind="relationship" relationship="masterViewController" id="Mvj-RE-9kP"/>
+                        <segue destination="JYK-hy-mLY" kind="relationship" relationship="detailViewController" id="mkc-3Z-BaG"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TlV-PL-9ew" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -140,6 +139,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="DW3-el-OXP"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eLn-EK-Jt6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

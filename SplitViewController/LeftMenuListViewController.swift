@@ -15,7 +15,13 @@ class LeftMenuListViewController: UIViewController {
         self.view.backgroundColor = .clear
     }
     
-
+    @IBAction func dismissView(_ sender: UIButton) {
+        let navigationController = splitViewController?.viewControllers.last as? UINavigationController
+        let tabBarViewController = navigationController?.topViewController as? UITabBarController
+        let mailListViewController = tabBarViewController?.children[0] as? MailListViewController
+        splitViewController?.showDetailViewController(mailListViewController!, sender: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
